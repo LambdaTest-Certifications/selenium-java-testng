@@ -37,7 +37,7 @@ public class magicLeap {
     public String username = "vishnukdas";//System.getenv("LT_USERNAME"); //"mohammadasadkhan1";
     public String accesskey = "D3tRgjqJOrG7GKCmdIkafAP7uUbPfiK3SaWXTWdjX3vhglk2yd";//System.getenv("LT_ACCESS_KEY");//"CsbtfqVzuuBShxEgq1K3";
     public RemoteWebDriver driver;
-    public String gridURL = "@eu-central-1-hub.lambdatest.com/wd/hub" ;//"@eu-central-1-hub.lambdatest.com/wd/hub";
+    public String gridURL = "@hub.lambdatest.com/wd/hub" ;//"@eu-central-1-hub.lambdatest.com/wd/hub";
     String status;
     String ResolutionValue;
 //    Tunnel t;
@@ -132,7 +132,7 @@ public class magicLeap {
             capabilities.setCapability("tunnel", false);
 //             capabilities.setCapability("selenium_version","3.141.59");
 
-            capabilities.setCapability("build", "Jenkins - EU Sanity : "+ this.PlatformValue);
+            capabilities.setCapability("build", "Jenkins - "+System.getProperty("BUILD_NUMBER")+" : "+ this.PlatformValue);
             capabilities.setCapability("name",this.TestName);
 
 //          capabilities.setCapability("performance",true);
